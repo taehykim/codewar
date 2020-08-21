@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5kyu - Integers: Recreation One</title>
+  </head>
+  <body>
+    <script>
+      function listSquared(m, n) {
+        let perfSquareArr = [];
+        function checkPerfSquareSum(m) {
+          while (m <= n) {
+            let squaredSumOfDivisors = 0;
+
+            for (let i = 1; i <= m; i++) {
+              if (m % i === 0) {
+                squaredSumOfDivisors += i * i;
+              }
+            }
+            if (
+              Math.sqrt(squaredSumOfDivisors) ===
+              Math.floor(Math.sqrt(squaredSumOfDivisors))
+            ) {
+              perfSquareArr.push([m, squaredSumOfDivisors]);
+            }
+            m++;
+          }
+
+          return perfSquareArr;
+        }
+        return checkPerfSquareSum(m);
+      }
+    </script>
+  </body>
+</html>

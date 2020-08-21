@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prefill an Array</title>
+  </head>
+  <body>
+    <script>
+      function prefill(n, v) {
+        if (n === 1) {
+          return [v];
+        }
+
+        if (n === 0) {
+          return [];
+        }
+
+        if (!v) {
+          v = undefined;
+        }
+
+        if (
+          typeof n !== "boolean" &&
+          Number.isInteger(Number(n)) &&
+          Number(n) >= 0
+        ) {
+          var newArr = [];
+          while (n > 0) {
+            newArr.push(...prefill(1, v));
+            n--;
+          }
+          return newArr;
+        } else {
+          throw new TypeError(`${n} is invalid`);
+        }
+      }
+    </script>
+  </body>
+</html>

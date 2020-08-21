@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Events</title>
+  </head>
+  <body>
+    <script>
+      // change this to a function
+      class Event {
+        constructor() {
+          this.handler = [];
+        }
+        subscribe(f) {
+          //   console.log(f);
+          this.handler.push(f);
+          //   console.log("this.handler:", this.handler);
+        }
+
+        unsubscribe(f) {
+          //   console.log(f);
+          this.handler.splice(this.handler.indexOf(f), 1);
+          //   console.log("this.handler:", this.handler);
+        }
+
+        emit(...args) {
+          //   console.log("inside emit");
+          //   console.log("args", args);
+          //   console.log(this.handler);
+          for (let i = 0; i < this.handler.length; i++) {
+            this.handler[i](...args);
+          }
+        }
+      }
+
+      var event = new Event();
+
+      function f() {
+        console.log("inside f");
+        console.log("before f.calls", f.calls);
+        console.log(f.calls || 0);
+        f.calls = (f.calls || 0) + 1;
+        console.log("after f.calls", f.calls);
+        console.log("before f.args", f.args);
+        console.log(arguments);
+        f.args = Array.prototype.slice.call(arguments);
+        console.log("after f.args", f.args);
+      }
+
+      event.subscribe(f);
+      event.emit(1, "foo", true);
+      event.unsubscribe(f);
+      event.emit(2);
+    </script>
+  </body>
+</html>

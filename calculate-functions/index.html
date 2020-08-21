@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculating with Functions</title>
+  </head>
+  <body>
+    <script>
+      function zero(operator) {
+        if (operator) {
+          return operator(0);
+        } else {
+          return 0;
+        }
+      }
+      function one(operator) {
+        if (operator) {
+          return operator(1);
+        } else {
+          return 1;
+        }
+      }
+      function two(operator) {
+        if (operator) {
+          return operator(2);
+        } else {
+          return 2;
+        }
+      }
+      function three(operator) {
+        if (operator) {
+          return operator(3);
+        } else {
+          return 3;
+        }
+      }
+      function four(operator) {
+        if (operator) {
+          return operator(4);
+        } else {
+          return 4;
+        }
+      }
+      function five(operator) {
+        if (operator) {
+          return operator(5);
+        } else {
+          return 5;
+        }
+      }
+      function six(operator) {
+        if (operator) {
+          return operator(6);
+        } else {
+          return 6;
+        }
+      }
+      function seven(operator) {
+        if (operator) {
+          return operator(7);
+        } else {
+          return 7;
+        }
+      }
+      function eight(operator) {
+        if (operator) {
+          return operator(8);
+        } else {
+          return 8;
+        }
+      }
+      function nine(operator) {
+        if (operator) {
+          return operator(9);
+        } else {
+          return 9;
+        }
+      }
+
+      function plus(x) {
+        function plusTwoNum(y) {
+          return x + y;
+        }
+        return plusTwoNum;
+      }
+      function minus(x) {
+        function minusTwoNum(y) {
+          return y - x;
+        }
+        return minusTwoNum;
+      }
+      function times(x) {
+        function timesTwoNum(y) {
+          return x * y;
+        }
+        return timesTwoNum;
+      }
+      function dividedBy(x) {
+        function divideTwoNum(y) {
+          return Math.floor(y / x);
+        }
+        return divideTwoNum;
+      }
+    </script>
+  </body>
+</html>
