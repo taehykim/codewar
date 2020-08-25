@@ -1,2 +1,2 @@
 # codewar
-Codewar's coding problems
+Codewars' coding problems
