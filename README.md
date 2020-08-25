@@ -1,2 +1,2 @@
-# codewar
+# codewars
 Codewars' coding problems
